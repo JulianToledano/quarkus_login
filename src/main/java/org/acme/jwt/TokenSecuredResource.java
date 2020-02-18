@@ -14,6 +14,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.SecurityContext;
+import javax.ws.rs.core.Response;
 
 import org.eclipse.microprofile.jwt.JsonWebToken;
 
@@ -55,8 +56,10 @@ public class TokenSecuredResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
-    public String login(User user){
-        return user.toString();
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response login(User user){
+        if (!user.username.equals("pepe"))
+            return Response.ok().build();
+        return Response.status(401).build();
     }
 }
