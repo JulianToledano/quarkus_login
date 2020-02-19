@@ -20,6 +20,7 @@ import org.eclipse.microprofile.jwt.JsonWebToken;
 
 import io.quarkus.runtime.Application;
 
+import org.jboss.logging.Logger;
 
 /**
  * Version 2 of the TokenSecuredResource
@@ -27,6 +28,8 @@ import io.quarkus.runtime.Application;
 @Path("/login")
 @RequestScoped
 public class TokenSecuredResource {
+
+    private static final Logger LOGGER = Logger.getLogger(TokenSecuredResource.class);
 
     @Inject
     JsonWebToken jwt;
@@ -57,9 +60,15 @@ public class TokenSecuredResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response login(User user){
-        if (!user.username.equals("pepe"))
+    public Response login(User user) throws Exception{
+        if (!user.username.equals("pepe")){
+            LOGGER.info("User " + user.username + " found.");
+            // Find in database
+                // Create JWT
+            GenerateToken.newJWT();
             return Response.ok().build();
+        }
+        LOGGER.info("User " + user.username + " not found.");
         return Response.status(401).build();
     }
 }
