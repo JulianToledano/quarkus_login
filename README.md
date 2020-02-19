@@ -30,4 +30,3 @@ You can then execute your binary: `./target/security-jwt-quickstart-1.0-SNAPSHOT
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/building-native-image-guide .
 
 Use of openapi
-./mvnw quarkus:add-extension -Dextensions="openapi"
