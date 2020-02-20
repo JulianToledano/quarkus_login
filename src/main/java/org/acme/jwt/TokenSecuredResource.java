@@ -1,27 +1,28 @@
 package org.acme.jwt;
 
-import java.security.Principal;
+//import java.security.Principal;
 
-import javax.annotation.security.PermitAll;
+//import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
-import javax.ws.rs.Consumes;
+//import javax.inject.Inject;
+//import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
+//import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+/*
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.SecurityContext;
+*/
 import javax.ws.rs.core.Response;
 
-import org.eclipse.microprofile.jwt.JsonWebToken;
+//import org.eclipse.microprofile.jwt.JsonWebToken;
 
-import io.quarkus.runtime.Application;
+//import io.quarkus.runtime.Application;
 
 import org.jboss.logging.Logger;
-
 /**
  * Version 2 of the TokenSecuredResource
  */
@@ -30,10 +31,10 @@ import org.jboss.logging.Logger;
 public class TokenSecuredResource {
 
     private static final Logger LOGGER = Logger.getLogger(TokenSecuredResource.class);
-
+    
+/*
     @Inject
     JsonWebToken jwt;
-
     @GET()
     @Path("permit-all")
     @PermitAll
@@ -56,19 +57,12 @@ public class TokenSecuredResource {
         String helloReply = String.format("hello + %s, isSecure: %s, authScheme: %s, hasJWT: %s", name, ctx.isSecure(), ctx.getAuthenticationScheme(), hasJWT);
         return helloReply;
     }
-
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response login(User user) throws Exception{
-        if (!user.username.equals("pepe")){
-            LOGGER.info("User " + user.username + " found.");
-            // Find in database
-                // Create JWT
-            GenerateToken.newJWT();
-            return Response.ok().build();
-        }
-        LOGGER.info("User " + user.username + " not found.");
-        return Response.status(401).build();
+*/
+    @GET
+    @Path("authentication")
+    @RolesAllowed("user")
+    public Response login(){
+        return Response.ok().build();
     }
+   
 }

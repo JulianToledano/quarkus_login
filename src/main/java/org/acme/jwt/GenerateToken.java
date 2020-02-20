@@ -1,5 +1,5 @@
 package org.acme.jwt;
-
+/*
 import java.util.HashMap;
 
 import org.eclipse.microprofile.jwt.Claims;
@@ -9,6 +9,7 @@ import org.jboss.logging.Logger;
  * A simple utility class to generate and print a JWT token string to stdout. Can be run with:
  * mvn exec:java -Dexec.mainClass=org.acme.jwt.GenerateToken -Dexec.classpathScope=test
  */
+
 public class GenerateToken {
     /**
      *
@@ -16,7 +17,7 @@ public class GenerateToken {
      *             [1]: optional time in seconds for expiration of generated token; defaults to 300
      * @throws Exception
      */
-
+/*
     private static final Logger LOGGER = Logger.getLogger(GenerateToken.class);
 
     public static void main(String[] args) throws Exception {
@@ -40,5 +41,5 @@ public class GenerateToken {
         String token = TokenUtils.generateTokenString(claimsJson, timeClaims);
         return token;
     }
-       
+  */     
 }

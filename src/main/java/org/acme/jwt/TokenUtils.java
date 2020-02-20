@@ -1,5 +1,5 @@
 package org.acme.jwt;
-
+/*
 import java.io.InputStream;
 import java.security.KeyFactory;
 import java.security.KeyPair;
@@ -20,7 +20,7 @@ import io.smallrye.jwt.build.JwtClaimsBuilder;
  * Utilities for generating a JWT for testing
  */
 public class TokenUtils {
-
+    
     private TokenUtils() {
         // no-op: utility class
     }
@@ -34,6 +34,7 @@ public class TokenUtils {
      * @return the JWT string
      * @throws Exception on parse failure
      */
+    /*
     public static String generateTokenString(String jsonResName, Map<String, Long> timeClaims)
             throws Exception {
         // Use the test private key associated with the test public key for a valid signature
@@ -62,7 +63,8 @@ public class TokenUtils {
      * @param pemResName - key file resource name
      * @return PrivateKey
      * @throws Exception on decode failure
-     */
+     **/
+    /*
     public static PrivateKey readPrivateKey(final String pemResName) throws Exception {
         InputStream contentIS = TokenUtils.class.getResourceAsStream(pemResName);
         byte[] tmp = new byte[4096];
@@ -77,6 +79,7 @@ public class TokenUtils {
      * @return PrivateKey
      * @throws Exception on decode failure
      */
+    /*
     public static PrivateKey decodePrivateKey(final String pemEncoded) throws Exception {
         byte[] encodedBytes = toEncodedBytes(pemEncoded);
 
@@ -100,10 +103,10 @@ public class TokenUtils {
 
     /**
      * @return the current time in seconds since epoch
-     */
+     *//*
     public static int currentTimeInSecs() {
         long currentTimeMS = System.currentTimeMillis();
         return (int) (currentTimeMS / 1000);
-    }
-
+    }*/
+    
 }
