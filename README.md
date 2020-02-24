@@ -156,7 +156,7 @@ The app has some health checks you can consult:
 * `./target/*-runner`
 
 **Note**: You need [GraalVm](https://www.graalvm.org/) in order to produce a native executable.
-### Create docker :wale: native container
+### Create docker :whale: native container
  * Create the native image 
    * `mvn package -Pnative -Dquarkus.native.container-runtime=docker -DskipTests`
  * `docker build -f src/main/docker/Dockerfile.native -t quarkus-login .`
